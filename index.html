@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Daño - Elfheim</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600,0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    
+    <main class="scroll-container">
+        <div class="ornament top-ornament">⟡ ✦ ⟡</div>
+        
+        <header class="title-section">
+            <div class="shield-icon">
+                <span class="shield">🛡️</span>
+            </div>
+            <h1 class="title">Calculadora de Daño</h1>
+            <p class="subtitle">Reinos de <span class="realm-name">Elfheim</span></p>
+            <div class="divider">
+                <span class="divider-symbol">⚔️</span>
+            </div>
+        </header>
+
+        <section class="calculator-scroll">
+            <form id="damageForm" class="form-content" autocomplete="off">
+                <div class="input-group">
+                    <label for="damage">
+                        <span class="label-icon">⚔️</span>
+                        Poder de Ataque
+                    </label>
+                    <input 
+                        type="number" 
+                        id="damage" 
+                        name="damage" 
+                        min="0" 
+                        step="1" 
+                        placeholder="Ejemplo: 50"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="defense">
+                        <span class="label-icon">🛡️</span>
+                        Defensa del Objetivo
+                    </label>
+                    <input 
+                        type="number" 
+                        id="defense" 
+                        name="defense" 
+                        min="0" 
+                        step="1" 
+                        placeholder="Ejemplo: 20"
+                        required
+                    >
+                </div>
+
+                <div class="formula-display">
+                    <span class="formula-label">Fórmula:</span>
+                    <span class="formula-text">Daño² / (Daño + Defensa)</span>
+                </div>
+
+                <button type="submit" class="calculate-btn">
+                    <span class="btn-icon">💀</span>
+                    <span class="btn-text">Calcular Daño</span>
+                    <span class="btn-icon">💀</span>
+                </button>
+            </form>
+
+            <div id="resultSection" class="result-section hidden">
+                <div class="result-card">
+                    <div class="result-ornament">✦</div>
+                    <h2 class="result-title">Impacto Causado</h2>
+                    <div class="result-value" id="resultValue">0</div>
+                    <p class="result-description" id="resultDescription">
+                        El golpe ha atravesado las defensas del adversario.
+                    </p>
+                    <div class="result-ornament bottom">✦</div>
+                </div>
+
+                <div class="details-card">
+                    <h3 class="details-title">Detalles del Cálculo</h3>
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <span class="detail-label">Daño Base</span>
+                            <span class="detail-value" id="detailDamage">0</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Defensa</span>
+                            <span class="detail-value" id="detailDefense">0</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Daño Total</span>
+                            <span class="detail-value" id="detailTotal">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" id="resetBtn" class="reset-btn hidden">
+                <span>🔄</span> Nueva Tirada
+            </button>
+        </section>
+
+        <div class="ornament bottom-ornament">⟡ ✦ ⟡</div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
