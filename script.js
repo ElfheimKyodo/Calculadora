@@ -65,10 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function formatNumber(num) {
-    if (Number.isInteger(num)) {
-      return num.toString();
-    }
-    return num.toFixed(2);
+    return Math.floor(num).toString();
   }
 
   form.addEventListener('submit', (e) => {
